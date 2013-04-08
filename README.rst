@@ -36,6 +36,9 @@ rebuild_i18n.sh
     warn when discovering missing or unneeded dependencies. This is becoming
     increasingly important with the arrive of Plone 4.3.
 
+`zptlint`_
+    Runs the Zope Page Template parser and output errors.
+
 Mostly Harmless
 ---------------
 
@@ -46,4 +49,5 @@ Got an idea? Found a bug? Let me know by `opening a support ticket`_.
 .. _`pep8`: https://pypi.python.org/pypi/pep8
 .. _`pyflakes`: https://pypi.python.org/pypi/pyflakes
 .. _`z3c.dependencychecker`: https://pypi.python.org/pypi/z3c.dependencychecker
+.. _`zptlint`: https://pypi.python.org/pypi/zptlint
 .. _`opening a support ticket`: https://github.com/hvelarde/qa/issues

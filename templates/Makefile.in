@@ -28,3 +28,6 @@ js-validation:
 
 coverage-validation:
 	bin/coverage.sh $(minimum_test_coverage)
+
+zpt-validation:
+    find $(src) -type f -name *.pt | xargs ${buildout:directory}/bin/zptlint
