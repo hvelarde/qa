@@ -46,3 +46,5 @@ zpt-validation:
 
 i18n-validation:
 	bin/i18ndude find-untranslated -n $(src)
+
+basic-validation: code-validation zpt-validation i18n-validation
