@@ -33,6 +33,3 @@ i18ndude rebuild-pot --pot $LOCALES/plone.pot --create plone $SOURCE/configure.z
 for po in $LOCALES/*/LC_MESSAGES/plone.po; do
     i18ndude sync --pot $LOCALES/plone.pot $po
 done
-
-# report any errors and suspect untranslated messages found
-i18ndude find-untranslated -n $SOURCE

@@ -31,3 +31,6 @@ coverage-validation:
 
 zpt-validation:
 	find $(src) -type f -name *.pt | xargs ${buildout:directory}/bin/zptlint
+
+i18n-validation:
+	bin/i18ndude find-untranslated -n $(src)
