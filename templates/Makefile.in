@@ -6,7 +6,7 @@
 # csslint_ignore: skip file names matching find pattern (use ! -name PATTERN)
 # jshint_ignore: skip file names matching find pattern (use ! -name PATTERN)
 
-SHELL = /bin/sh
+SHELL = /bin/bash
 
 src = `find . -type d | grep -m 1 "${variables:source}"`
 minimum_test_coverage = ${buildout:package-minimum-test-coverage}
@@ -14,6 +14,15 @@ pep8_ignore = ${buildout:package-pep8-ignore}
 max_complexity = ${buildout:package-max-complexity}
 csslint_ignore = ${buildout:package-csslint-ignore}
 jshint_ignore = ${buildout:package-jshint-ignore}
+
+NO_COLOR = \x1b[0m
+OK_COLOR = \x1b[32;01m
+ERROR_COLOR = \x1b[31;01m
+WARN_COLOR = \x1b[33;01m
+
+OK_STRING = $(OK_COLOR)[ok]$(NO_COLOR)
+ERROR_STRING = $(ERROR_COLOR)[errors]$(NO_COLOR)
+WARN_STRING = $(WARN_COLOR)[warnings]$(NO_COLOR)
 
 python-validation:
 	bin/flake8 --ignore=$(pep8_ignore) --max-complexity=$(max_complexity) $(src)
