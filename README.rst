@@ -37,7 +37,7 @@ rebuild_i18n.sh
     increasingly important with the arrive of Plone 4.3.
 
 `zptlint`_
-    Runs the Zope Page Template parser and output errors.
+    Runs the `Zope Page Templates`_ parser and output errors.
 
 Mostly Harmless
 ---------------
@@ -50,4 +50,5 @@ Got an idea? Found a bug? Let me know by `opening a support ticket`_.
 .. _`pyflakes`: https://pypi.python.org/pypi/pyflakes
 .. _`z3c.dependencychecker`: https://pypi.python.org/pypi/z3c.dependencychecker
 .. _`zptlint`: https://pypi.python.org/pypi/zptlint
+.. _`Zope Page Templates`: https://pypi.python.org/pypi/zope.pagetemplate
 .. _`opening a support ticket`: https://github.com/hvelarde/qa/issues
