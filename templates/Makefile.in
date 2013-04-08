@@ -24,8 +24,11 @@ OK_STRING = $(OK_COLOR)[ok]$(NO_COLOR)
 ERROR_STRING = $(ERROR_COLOR)[errors]$(NO_COLOR)
 WARN_STRING = $(WARN_COLOR)[warnings]$(NO_COLOR)
 
-python-validation:
+code-validation:
 	bin/flake8 --ignore=$(pep8_ignore) --max-complexity=$(max_complexity) $(src)
+
+python-validation: code-validation
+	@echo -e "$(WARN_COLOR)python-validation is deprecated; use code-validation instead$(NO_COLOR)"
 
 css-validation:
 	npm install csslint -g 2>/dev/null
