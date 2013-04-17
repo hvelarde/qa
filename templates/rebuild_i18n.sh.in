@@ -2,11 +2,9 @@
 # see http://maurits.vanrees.org/weblog/archive/2010/10/i18n-plone-4 for more information
 
 I18NDOMAIN="${buildout:package-name}"
-ALLOWED_LANGUAGES="${buildout:allowed-languages}"
-# take out english
-ALLOWED_LANGUAGES="`echo $ALLOWED_LANGUAGES | sed -e s/en,\ *//g`"
+LANGUAGES="${buildout:package-languages}"
 # change from comma-separed list to space separeted list
-ALLOWED_LANGUAGES="`echo $ALLOWED_LANGUAGES | sed -e s/,\ */\ /g`"
+LANGUAGES="`echo $LANGUAGES | sed -e s/,\ */\ /g`"
 
 # find the source, as it shoul be in the src directory
 SOURCE=`find . -type d | grep -m 1 "${variables:source}"`
@@ -35,8 +33,8 @@ if [ ! -f $LOCALES/plone.pot ]; then
 fi
 
 # create allowed languages directories if don't exist
-if [ "$ALLOWED_LANGUAGES" ]; then
-    for lang in $ALLOWED_LANGUAGES; do
+if [ "$LANGUAGES" ]; then
+    for lang in $LANGUAGES; do
 	if [ ! -f $LOCALES/$lang ]; then
 	    mkdir $LOCALES/$lang;
 	fi
