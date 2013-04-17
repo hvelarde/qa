@@ -30,12 +30,15 @@ rebuild_i18n.sh
     Single script to synchronize i18n pot files with all translatable strings
     extracted form the package scripts and templates. Will also report any
     errors and suspect untranslated messages found.
-    If there is a variable "allowed-languages" with the list of languages
-    in the buildout section, this script automatically create the initial
+
+    If there is a variable 'package-languages' with the list of languages
+    in the buildout section, this script will create automatically the initial
     structure of locales folder and files.
-    We recommend to add this variable this way:
+
+    Use something like this:
+
     [buildout]
-    allowed-languages=en, es, pt_BR
+    package-languages = es, pt_BR
 
 `z3c.dependencychecker`_
     Checks which imports are done and compares them to what's in setup.py and
