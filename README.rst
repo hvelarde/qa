@@ -23,7 +23,7 @@ The following tools are provided:
 
 coverage.sh
     Single script to check if a minimum test coverage is assured (we could
-    skip this if createzopecoverage could provide at some point this
+    skip this if createcoverage could provide at some point this
     information directly).
 
 rebuild_i18n.sh
