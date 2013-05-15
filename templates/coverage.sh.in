@@ -1,5 +1,5 @@
 #! /bin/sh
-# checks for report created with createzopecoverage and evaluate the result
+# checks for report created with createcoverage and evaluate the result
 
 DEFAULT=${buildout:package-minimum-test-coverage}
 REPORT="coverage/reports/all.html"
@@ -12,7 +12,7 @@ else
 fi
 
 if [ ! -f "$REPORT" ]; then
-    bin/createzopecoverage
+    bin/createcoverage
 fi
 
 # find first percentage value in file (module test coverage) and return it

@@ -15,7 +15,7 @@ tools in Plone projects.
 
 The following tools are provided:
 
-`createzopecoverage`_
+`createcoverage`_
     Single script to create test coverage reports.
 
 `flake8`_
@@ -53,7 +53,7 @@ Mostly Harmless
 
 Got an idea? Found a bug? Let me know by `opening a support ticket`_.
 
-.. _`createzopecoverage`: https://pypi.python.org/pypi/createzopecoverage
+.. _`createcoverage`: https://pypi.python.org/pypi/createcoverage
 .. _`flake8`: https://pypi.python.org/pypi/flake8
 .. _`pep8`: https://pypi.python.org/pypi/pep8
 .. _`pyflakes`: https://pypi.python.org/pypi/pyflakes
