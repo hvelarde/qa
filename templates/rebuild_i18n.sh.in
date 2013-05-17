@@ -2,58 +2,10 @@
 # see http://maurits.vanrees.org/weblog/archive/2010/10/i18n-plone-4 for more information
 
 I18NDOMAIN="${buildout:package-name}"
-LANGUAGES="${buildout:package-languages}"
-# change from comma-separed list to space separeted list
-LANGUAGES="`echo $LANGUAGES | sed -e s/,\ */\ /g`"
 
 # find the source, as it shoul be in the src directory
 SOURCE=`find . -type d | grep -m 1 "${variables:source}"`
 LOCALES="$SOURCE/locales";
-# create locales folder if don't exist
-if [ ! -d $LOCALES ]; then
-    mkdir $LOCALES;
-fi
-
-# check if the locales directory is registered
-FOUND=`grep -c "i18n:registerTranslations" $SOURCE/configure.zcml`
-if [ $FOUND -eq 0 ]; then
-    echo "Translations directory 'locales' not registered in your $SOURCE/configure.zcml file"
-    exit 1
-fi
-
-# create .pot files if don't exist
-if [ ! -f $LOCALES/$I18NDOMAIN.pot ]; then
-    touch $LOCALES/$I18NDOMAIN.pot;
-fi
-if [ ! -f $LOCALES/manual.pot ]; then
-    touch $LOCALES/manual.pot;
-fi
-if [ ! -f $LOCALES/plone.pot ]; then
-    touch $LOCALES/plone.pot;
-fi
-
-# create allowed languages directories if don't exist
-if [ "$LANGUAGES" ]; then
-    for lang in $LANGUAGES; do
-	if [ ! -f $LOCALES/$lang ]; then
-	    mkdir $LOCALES/$lang;
-	fi
-    done
-fi
-
-# create .po files if don't exist
-for loc in $LOCALES/*; do
-    # if it is a directory
-    if [ -d $loc ]; then
-        # create directory LC_MESSAGES if don't exist
-        if [ ! -f $loc/LC_MESSAGES ]; then
-            mkdir $loc/LC_MESSAGES;
-        fi
-        for pot in $LOCALES/*.pot; do
-            touch $loc/LC_MESSAGES/`basename $pot .pot`.po
-        done
-    fi
-done
 
 # rebuild pot file for package's domain and merge it with any manual translations needed
 bin/i18ndude rebuild-pot --pot $LOCALES/$I18NDOMAIN.pot --merge $LOCALES/manual.pot --create $I18NDOMAIN $SOURCE
