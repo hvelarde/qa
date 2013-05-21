@@ -41,6 +41,10 @@ js-validation:
 coverage-validation:
 	bin/coverage.sh $(minimum_test_coverage)
 
+coveralls: coverage-validation
+	pip install coveralls
+	coveralls
+
 zpt-validation:
 	find $(src) -type f -name *.pt | xargs ${buildout:directory}/bin/zptlint
 	find $(src) -type f -name *.xml | xargs ${buildout:directory}/bin/zptlint
