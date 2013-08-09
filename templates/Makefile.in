@@ -42,7 +42,7 @@ coverage-validation:
 	bin/coverage.sh $(minimum_test_coverage)
 
 coveralls: coverage-validation
-	pip install coveralls
+	pip install -q coveralls
 	coveralls
 
 zpt-validation:
