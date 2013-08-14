@@ -5,6 +5,10 @@ Quality Assurance for Plone projects
 Life, the Universe, and Everything
 ----------------------------------
 
+.. Warning::
+    The use of this configuration is deprecated in favor of
+    `plone.recipe.codeanalysis`_. Please use it and help us improving it.
+
 Buildout configuration and tools for providing Quality Assurance for Plone projects.
 
 Don't Panic
@@ -18,7 +22,7 @@ The following tools are provided:
 `createcoverage`_
     Single script to create test coverage reports.
 
-`flake8`_
+`flake8`_ (DEPRECATED)
     A wrapper around `Pyflakes, pep8 and Ned Batchelder's McCabe script.
 
 coverage.sh
@@ -45,7 +49,7 @@ rebuild_i18n.sh
     warn when discovering missing or unneeded dependencies. This is becoming
     increasingly important with the arrive of Plone 4.3.
 
-`zptlint`_
+`zptlint`_ (DEPRECATED)
     Runs the `Zope Page Templates`_ parser and output errors.
 
 Mostly Harmless
@@ -55,9 +59,10 @@ Got an idea? Found a bug? Let me know by `opening a support ticket`_.
 
 .. _`createcoverage`: https://pypi.python.org/pypi/createcoverage
 .. _`flake8`: https://pypi.python.org/pypi/flake8
+.. _`opening a support ticket`: https://github.com/hvelarde/qa/issues
 .. _`pep8`: https://pypi.python.org/pypi/pep8
+.. _`plone.recipe.codeanalysis`: https://github.com/plone/plone.recipe.codeanalysis
 .. _`pyflakes`: https://pypi.python.org/pypi/pyflakes
 .. _`z3c.dependencychecker`: https://pypi.python.org/pypi/z3c.dependencychecker
-.. _`zptlint`: https://pypi.python.org/pypi/zptlint
 .. _`Zope Page Templates`: https://pypi.python.org/pypi/zope.pagetemplate
-.. _`opening a support ticket`: https://github.com/hvelarde/qa/issues
+.. _`zptlint`: https://pypi.python.org/pypi/zptlint
